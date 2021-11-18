@@ -1,0 +1,52 @@
+
+<div class="parentForm">
+    <div class="container">
+        <div class="right">
+            <h1>S'inscrire</h1>
+            <p>Deja membre? <a href="#">se connecter</a></p>
+            <form>
+
+                <div class="form-control" id="form1">
+                    <div>
+                        <label for="z-nom">Nom:</label>
+                        <input ngModel name="nom" #nom="ngModel" (change)="display(nom)" id="nom" type="text"/><br>
+                    
+                    </div>
+                    <div>
+                        <label for="prenom">Prénom</label><br>
+                        <input ngModel #prenom="ngModel" (change)="display(prenom)" id="prenom" name="prenom" type="text"/>
+                    </div>
+                    
+                </div>
+                
+                <div class="form-control">
+                    <label for="z-mail">E-mail:</label>
+                    <input ngModel name="email" #email="ngModel" (change)="display(email)" id="email" type="text"><br>
+        
+                </div>
+                
+                <div class="form-control">
+                    <label for="">Mot de passe:</label>
+                    <input ngModel name="motDePasse" #motDePasse="ngModel" (change)="display(motDePasse)" id="motDePasse" type="password"><br>
+                    
+                </div>
+                
+                <div class="form-control">    
+                    <label for="">Confirmer mot de passe:</label>
+                    <input  ngModel name="confirmation" #confirmation="ngModel" (change)="display(confirmation)" id="confirmation" type="password"><br>
+                
+                </div>
+                <div class="form-control" id="form1">
+                    <button type="submit">Se connecter</button>
+                    <button type="submit" id="button1">Se connecter</button>
+                </div>
+            </form>
+    
+           
+           
+        </div>
+        <div class="left">
+        </div>
+    
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<div *ngIf="!connected; then home else auth"></div>
+<ng-template #auth>
+  <app-auth (connected)="handleConnected($event)"></app-auth>
+</ng-template>
+<ng-template #home>
+  <app-home [activeUser]="activeUser"></app-home>
+
+</ng-template>

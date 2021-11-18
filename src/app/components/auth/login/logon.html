@@ -1,0 +1,11 @@
+<div class="parentForm">
+    <form action="">
+        <div class="titre">Connexion</div>
+        <label for="z-mail">Mail:</label>
+        <input ngModel name="email" #email="ngModel" (change)="display(email)" id="email" type="text"><br>
+        <label for="">Mot de passe:</label>
+        <input ngModel name="motDePasse" #motDePasse="ngModel" (change)="display(motDePasse)" id="motDePasse" type="password"><br>
+        <button type="submit">se connecter</button>
+    </form>
+    
+</div>

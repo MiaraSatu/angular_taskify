@@ -1,0 +1,241 @@
+/* header {
+    width: 100vw;
+    background-color: rgb(235, 219, 166);
+    
+
+}
+aside {
+    width: 100vw;
+    display: flex;
+}
+aside #project {
+    width: 20%;
+    background-color: rgb(180, 150, 93);
+}
+aside #task {
+    width: 80%;
+    background-color: rgb(142, 210, 236);
+}
+.btn {
+    color: #fff;
+    padding: 5px 6px;
+    border: none;
+    border-radius: 7px;
+    background-color:  rgb(124, 164, 211);
+} */
+html{
+    width: 100%;
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: gadugi;
+}
+#main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(39, 39, 39);
+}
+/* NAV */
+#main>#nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 4%;
+    height: 100%;
+    background-color: rgba(200, 200, 200, 0.1);
+}
+#main>#nav>#nt {
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+#main>#nav>#nt>i {
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    margin: 10px auto;
+}
+#main>#nav>#nm {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+#main>#nav>#nm>i {
+    color: gray;
+    margin: 10px auto;
+}
+#main>#nav>#nm .active {
+    color: gray;
+    border-radius: 5px;
+    background-color: rgb(117, 82, 241)violet;
+}
+#main>#nav>#nb {
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+}
+#main>#nav>#nb>i {
+    color: rgb(209, 209, 209);
+    margin: 10px auto;
+}
+#main>#nav>#nb .plittle{
+    object-fit: cover;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 10px auto;
+}
+
+/* BODY */
+#main>#body {
+    box-sizing: border-box;
+    width: 96%;
+    padding-left: 4%;
+    padding-right: 8%;
+    padding-top: 30px;
+    height: 100%;
+    overflow: auto;
+}
+#main>#body>form {
+    display: flex;
+    width: 100%;
+    background-color: rgba(100, 100, 100, 0.5);
+    padding: 10px 10px;
+    border-radius: 7px;
+}
+#main>#body>form>input {
+    width: 100%;
+    background: none;
+    outline: none;
+    border: none;
+    color: rgb(219, 219, 219);
+}
+#main>#body>form>i {
+    color: rgb(187, 187, 187);
+    margin-right: 5px;
+}
+#main>#body>#bheader{
+    width: 100%;
+}
+#main>#body>#bheader>#direction {
+    color: rgb(236, 236, 236);
+    margin: 17px auto;
+}
+#main>#body>#bheader>#titlesOthers {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+#main>#body>#bheader>#titlesOthers>#titles {
+    width: 30%;
+} 
+#main>#body>#bheader>#titlesOthers>#titles>#title {
+    color: white;
+    font-size: 24px;
+    font-family: 'gadugi';
+}
+#main>#body>#bheader>#titlesOthers>#titles>#description {
+    color: rgb(117, 117, 117);
+    font-size: 14px;
+}
+#main>#body>#bheader>#titlesOthers>#others {
+    display: flex;
+    justify-content: end;
+}
+#main>#body>#bheader>#titlesOthers>#others>#projectNumber{
+    margin-right: 40px;
+}
+#main>#body>#bheader>#titlesOthers>#others {
+    font-family: gadugi;
+}
+#main>#body>#bheader>#titlesOthers>#others .max {
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+}
+#main>#body>#bheader>#titlesOthers>#others .min {
+    font-size: 12px;
+    color:rgb(216, 216, 216);
+}
+#main>#body>#bheader>#options {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: rgb(175, 175, 175);
+}
+#main>#body>#bheader>#options>#right {
+    display: flex;
+    justify-content: start;
+}
+#main>#body>#bheader>#options>#left {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+#main>#body>#bheader>#options>#left>img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    align-items: center;
+    border-radius: 50%;
+    margin-right: 12px; 
+}
+#edit, #create {
+    padding: 8px 10px;
+    border: 1px solid rgb(66, 66, 66);
+    border-radius: 7px;
+    font-size: 14px;
+}
+#edit {
+    margin-right: 10px;
+}
+#contents {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#contents>.content {
+    display: flex;
+    width: 180px;
+    height: 180px;
+    border: 1px solid rgb(80, 80, 80);
+    border-radius: 10px;
+    margin: 30px;
+    justify-content: center;
+    align-items: center;
+    color: rgb(184, 184, 184);
+}
+#contents>.content>.contentsection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#contents>.content>.contentsection>i, #contents>.content>.contentsection>div {
+    margin-right: auto;
+    margin-left: auto;
+}
+#task {
+    height: 100%;
+    width: 100%;
+}
+#fermer {
+    position: absolute;
+    right: 0px;
+    background-color: rgb(209, 101, 0);
+    padding: 4px 6px;
+    color: rgb(221, 221, 221);
+    border: none;
+}

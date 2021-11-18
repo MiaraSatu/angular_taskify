@@ -1,0 +1,148 @@
+<!-- <header>
+    eto lay header
+</header>
+<aside>
+    <div id="project">
+        <div *ngFor="let project of projects" >
+            <div (click)="displayProject(project.id)">{{ project.titre }}</div>
+        </div>
+        <div *ngIf="!visibleForm; then form else btnAjout"></div>
+        <ng-template #btnAjout>
+            <button class="btn" (click)="displayVisibleForm()">
+                Ajouter
+            </button>
+        </ng-template>
+        <ng-template #form>
+            <form>
+                <input ngModel name="titre" #titre="ngModel" (change)="displayForm(titre)" id="titre" type="text" placeholder="titre">
+                <textarea ngModel name="description" #description="ngModel" (change)="displayForm(description)" id="description" placeholder="description"></textarea>
+                <label>Date d'estimation</label>
+                <input type="datetime-local" ngModel name="dateEstimation" #dateEstimation="ngModel" (change)="displayForm(dateEstimation)" id="dateEstimation">
+                <button type="submit">Ajouter</button>
+                <button type="button" (click)="displayVisibleForm()">Fermer</button>
+            </form>
+        </ng-template>
+    </div>
+    <div id="task">
+        <app-tasks [idProject]="activeProject" *ngIf="activeProject"></app-tasks>
+    </div>
+</aside> -->
+
+<div id="main" *ngIf="!activeProject">
+    <!-- nav left -->
+    <div id="nav">
+        <!-- nav top -->
+        <div id="nt">
+            <i class="fas fa-tasks"></i>
+        </div>
+        <!-- nav middle -->
+        <div id="nm">
+            <i class="far fa-calendar-check"></i>
+            <i class="far fa-clone active"></i>
+            <i class="fas fa-users"></i>
+        </div>
+        <!-- nav bottom -->
+        <div id="nb">
+            <i class="far fa-question-circle"></i>
+            <i class="far fa-bell"></i>
+            <!-- <img src="./images/default.jpg" alt="" class="plittle"> -->
+        </div>
+    </div>
+    <!-- body -->
+    <div id="body">
+        <!-- search -->
+        <form id="bsearch">
+            <i class="fas fa-search"></i>
+            <input type="text" id="" placeholder="Search for projects, members, tasks, ...">
+        </form>
+        <!-- headerprojects -->
+        <div id="bheader">
+            <!-- direction -->
+            <div id="direction">
+                <i class="fas fa-angle-left"></i>
+                Back
+            </div>
+            <!-- titles -->
+            <div id="titlesOthers">
+                <!-- title -->
+                <div id="titles">
+                    <div id="title">
+                        Projects Dashboard
+                    </div>
+                    <div id="description">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </div>
+                </div>
+                <div id="others">
+                    <!-- projects number -->
+                    <div id="projectNumber">
+                        <div class="min">Project</div>
+                        <div class="max">{{ projects.length }}</div>
+                    </div>
+                    <!-- Members -->
+                    <div id="projectMember">
+                        <div class="min">Members</div>
+                        <div class="max">liste</div>
+                    </div>
+                </div>
+            </div>
+            <!-- options -->
+            <div id="options">
+                <div id="left">
+                    <!-- <img src="./images/default.jpg" alt=""> -->
+                    <div>Tomorow real Estate</div>
+                </div>
+                <div id="right">
+                    <div id="edit">
+                        Edit Team
+                    </div>
+                    <div id="create">
+                        <i class="fas fa-plus"></i>
+                        Create new project      
+                
+                    </div>
+                </div>
+            </div>
+            <div id="contents">
+                <!-- div new -->
+                <div class="content" id="newProject">
+                    <div class="contentsection">
+                        <i class="fas fa-plus block"></i>
+                        <div>Créer un nouveau Projet</div>
+                        <div *ngIf="!visibleForm; then form else btnAjout"></div>
+                        <ng-template #btnAjout>
+                            <button class="btn" (click)="displayVisibleForm()">
+                                Ajouter
+                            </button>
+                        </ng-template>
+                        <ng-template #form>
+                            <form>
+                                <input ngModel name="titre" #titre="ngModel" (change)="displayForm(titre)" id="titre" type="text" placeholder="titre">
+                                <textarea ngModel name="description" #description="ngModel" (change)="displayForm(description)" id="description" placeholder="description"></textarea>
+                                <label>Date d'estimation</label>
+                                <input type="date" ngModel name="dateEstimation" #dateEstimation="ngModel" (change)="displayForm(dateEstimation)" id="dateEstimation">
+                                <button type="submit">Ajouter</button>
+                                <button type="button" (click)="displayVisibleForm()">Fermer</button>
+                            </form>
+                        </ng-template>
+                    </div>
+                </div>
+                <!-- div content -->
+                <!-- <div *ngFor="let project of projects" >
+                    <div (click)="displayProject(project.id)" class="content">{{ project.titre }}</div>
+                </div> -->
+
+                <div *ngFor="let project of projects" class="content">
+                    <div (click)="displayProject(project.id)">
+                        {{ project.titre }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="task" *ngIf="activeProject">
+    <button id="fermer" (click)="displayProject(undefined)">Fermer</button>
+    <app-tasks [idProject]="activeProject" ></app-tasks>
+</div>

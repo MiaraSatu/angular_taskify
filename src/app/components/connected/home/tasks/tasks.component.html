@@ -1,0 +1,72 @@
+<div id="tasks">
+    <div class="niveau">
+        <div class="titre">Déclaré</div>
+        <div class="nouveau">
+            <div *ngIf="!visibleForm; then form else btnAjout"></div>
+            <ng-template #btnAjout>
+                <button class="btn" (click)="displayVisibleForm()">
+                    +
+                </button>
+            </ng-template>
+            <ng-template #form>
+                <form>
+                    <input ngModel name="titre" #titre="ngModel" (change)="displayForm(titre)" id="titre" type="text" placeholder="titre">
+                    <textarea ngModel name="description" #description="ngModel" (change)="displayForm(description)" id="description" placeholder="description"></textarea>
+                    <label>Date d'estimation</label>
+                    <input type="date" ngModel name="dateEstimation" #dateEstimation="ngModel" (change)="displayForm(dateEstimation)" id="dateEstimation">
+                    <!-- <input type="date" ngModel name="dateEstimation" #dateEstimation="ngModel" (change)="displayForm(dateEstimation)" id="dateEstimation"> -->
+                    <select ngModel name="niveau" #niveau="ngModel" (change)="displayForm(niveau)" id="niveau">
+                        <option value="declare">déclaré</option>
+                        <option value="encours">en cours</option>
+                        <option value="acheve">achevé</option>
+                    </select>
+                    <button type="submit" (click)="handleClick()">Ajouter</button>
+                    <button type="button" (click)="displayVisibleForm()">Fermer</button>
+                </form>
+            </ng-template>
+        </div>
+        <div *ngFor="let declare of Declare" class="block">
+            <div class="progess"></div>
+            <div class="ptitre">
+                {{ declare.titre }}
+            </div>
+        </div>
+
+        <!-- <div *ngIf="!visibleForm; then form else btnAjout"></div>
+        <ng-template #btnAjout>
+            <button class="btn" (click)="displayVisibleForm()">
+                Nouveau
+            </button>
+        </ng-template>
+        <ng-template #form>
+            <form>
+                <input ngModel name="titre" #titre="ngModel" (change)="displayForm(titre)" id="titre" type="text" placeholder="titre">
+                <textarea ngModel name="description" #description="ngModel" (change)="displayForm(description)" id="description" placeholder="description"></textarea>
+                <label>Date d'estimation</label>
+                <input type="datetime-local" ngModel name="dateEstimation" #dateEstimation="ngModel" (change)="displayForm(dateEstimation)" id="dateEstimation">
+                <button type="submit">Ajouter</button>
+                <button type="button" (click)="displayVisibleForm()">Fermer</button>
+            </form>
+        </ng-template> -->
+    </div>
+    <div class="niveau">
+        <div class="titre">En cours</div>
+        <div class="nouveau">+</div>
+        <div *ngFor="let encours of Encours" class="block">
+            <div class="progess"></div>
+            <div class="ptitre">
+                {{ encours.titre }}
+            </div>
+        </div>
+    </div>
+    <div class="niveau">
+        <div class="titre">Achevé</div>
+        <div class="nouveau">+</div>
+        <div *ngFor="let acheve of Acheves" class="block">
+            <div class="progess"></div>
+            <div class="ptitre">
+                {{ acheve.titre }}
+            </div>
+        </div>
+    </div>
+</div>

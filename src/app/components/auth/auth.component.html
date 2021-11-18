@@ -1,0 +1,11 @@
+<!-- handle account status -->
+<button type="button" (click)="changeStatusAccount()">
+    {{ buttonText }}
+</button>
+<div *ngIf="hasAccount; then create else login"></div>
+<ng-template #create>
+    <app-create></app-create>
+</ng-template>
+<ng-template #login>
+    <app-login (connected)="handleConnected($event)"></app-login>
+</ng-template>
